@@ -1,0 +1,342 @@
+.correct-answer {
+    background-color: #e6ffe6; /* Light green */
+    border: 1px solid #4CAF50;
+}
+
+.incorrect-answer {
+    background-color: #ffe6e6; /* Light red */
+    border: 1px solid #F44336;
+}
+
+/* Existing styles below */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+h1 {
+    color: #333;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.wheel-area,
+.puzzle-section {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.wheel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.letter {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.letter:hover {
+    background-color: #0056b3;
+}
+
+.selected-letters {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#collectedLetters {
+    color: #28a745;
+}
+
+.puzzle {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.puzzle h3 {
+    color: #555;
+    margin-top: 0;
+}
+
+.puzzle input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.puzzle button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.puzzle button:hover {
+    background-color: #218838;
+}
+
+.feedback {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#unlockButton {
+    background-color: #6c757d;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#unlockButton:hover {
+    background-color: #5a6268;
+}
+
+#finalFeedback {
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+/* Hidden utility class */
+.hidden {
+    display: none;
+}
+
+/* Styles for index.html (crossword) - ensure these don't conflict */
+.crossword-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 40px);
+    gap: 2px;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+.letter-box {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    text-transform: uppercase;
+}
+
+.correct-answer {
+    background-color: #d4edda;
+    border-color: #28a745;
+}
+
+.incorrect-answer {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+}
+
+.final-highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.word-input-container {
+    margin-top: 20px;
+}
+
+#wordInput {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+#submitWord {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submitWord:hover {
+    background-color: #0056b3;
+}
+
+#feedbackMessage {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#next-puzzle-btn {
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#next-puzzle-btn:hover {
+    background-color: #138496;
+}
+
+/* Story and Welcome Screen Styles */
+#welcome-screen,
+#story-screen,
+#puzzle-1-screen {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#welcome-screen button,
+#story-screen button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+#welcome-screen button:hover,
+#story-screen button:hover {
+    background-color: #0056b3;
+}
+
+#story-screen p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#puzzle-1-screen h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#puzzle-1-screen .crossword-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#puzzle-1-screen .crossword-row {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+#puzzle-1-screen .letter-box {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    margin: 2px;
+}
+
+#puzzle-1-screen #check-answers {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#puzzle-1-screen #check-answers:hover {
+    background-color: #218838;
+}
+
+#puzzle-1-screen #message {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#puzzle-1-screen .word-input-container {
+    margin-top: 20px;
+}
+
+#puzzle-1-screen #wordInput {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+#puzzle-1-screen #submitWord {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#puzzle-1-screen #submitWord:hover {
+    background-color: #0056b3;
+}
+
+#puzzle-1-screen #feedbackMessage {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#puzzle-1-screen #next-puzzle-btn {
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#puzzle-1-screen #next-puzzle-btn:hover {
+    background-color: #138496;
+}

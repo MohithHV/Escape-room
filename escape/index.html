@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Escape Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="welcome-screen">
+        <h1>Medical Escape Room</h1>
+        <p>You find yourself trapped in a mysterious medical facility. Can you solve the puzzles and escape before it's too late?</p>
+        <button id="start-game">Start Game</button>
+    </div>
+
+    <div id="story-screen" class="hidden">
+        <h2>The Scenario</h2>
+        <p>A deadly new virus is sweeping the globe. You, a brilliant virologist, have been kidnapped and brought to this secret lab. You must find the cure and escape before time runs out.</p>
+        <h2>Your Goal</h2>
+        <p>Your mission is to solve a series of puzzles to identify the correct antiviral drug and the container it's stored in. The fate of the world rests in your hands.</p>
+        <button id="start-puzzle-1">Begin First Puzzle</button>
+    </div>
+
+    <div id="puzzle-1-screen" class="hidden">
+        <h2>Puzzle 1: The Human Body</h2>
+        <div class="crossword">
+            <div class="crossword-row">
+                <div class="clue">1. Pumps blood around the body.</div>
+                <div class="answer">
+                    <input type="text" maxlength="1" class="letter-box"> 
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                </div>
+            </div>
+            <div class="crossword-row">
+                <div class="clue">2. Main organs of the respiratory system.</div>
+                <div class="answer">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                </div>
+            </div>
+            <div class="crossword-row">
+                <div class="clue">3. Control center of the nervous system.</div>
+                <div class="answer">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                </div>
+            </div>
+            <div class="crossword-row">
+                <div class="clue">4. Detoxifies various metabolites.</div>
+                <div class="answer">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                </div>
+            </div>
+            <div class="crossword-row">
+                <div class="clue">5. Filters waste products from the blood.</div>
+                <div class="answer">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                </div>
+            </div>
+            <div class="crossword-row">
+                <div class="clue">6. Digests food.</div>
+                <div class="answer">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                    <input type="text" maxlength="1" class="letter-box">
+                </div>
+            </div>
+        </div>
+        <button id="check-answers">Check Answers</button>
+        <p id="message"></p>
+        <button id="next-puzzle-btn" class="hidden">Next Puzzle</button>
+
+        <div class="word-input-container hidden">
+            <p>Combine heart, liver, stomach, kidney, brain and lungs.</p>
+            <input type="text" id="wordInput" placeholder="Enter the highlighted word">
+            <button id="submitWord">Submit Word</button>
+            <p id="feedbackMessage"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code to Heart Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Code to Heart Puzzle</h1>
+        <p>Welcome to the Code to Heart puzzle! Solve the riddles to reveal the secret code.</p>
+        
+        
+
+        <div class="puzzle-section">
+            <h2>Riddle 1</h2>
+            <p>Which vitamin is essential for healthy eyes?</p>
+            <input type="text" id="answer6" placeholder="Your answer">
+            <p id="feedback6" class="feedback"></p>
+        </div>
+
+        <div class="puzzle-section">
+            <h2>Riddle 2</h2>
+            <p>This letter is the symbol for the speed of light in physics formulas.</p>
+            <input type="text" id="answer7" placeholder="Your answer">
+            <p id="feedback7" class="feedback"></p>
+        </div>
+
+        <div class="puzzle-section">
+            <h2>Riddle 3</h2>
+            <p>Your body turns carbohydrates into this simple sugar for energy. It starts with the letter,</p>
+            <input type="text" id="answer8" placeholder="Your answer">
+            <p id="feedback8" class="feedback"></p>
+        </div>
+
+        <button id="submit-answers">Submit Answers</button>
+        <p id="overall-feedback" class="feedback"></p>
+
+        <div id="heart-reveal" style="display:none;">
+            <h2>Congratulations!</h2>
+            <p>You've unlocked the heart! Enter the secret code:</p>
+            <input type="text" id="secretCodeInput" placeholder="Enter code here">
+            <button id="checkSecretCode">Submit Code</button>
+            <p id="secretCodeFeedback" class="feedback"></p>
+            <button id="puzzle3Button" style="display:none;">Go to Puzzle 3</button>
+            <img src="heart.png" alt="Heart" style="width:100px; height:auto;">
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const answers = {
+                answer6: 'e',
+                answer7: 'c',
+                answer8: 'g'
+            };
+
+            const submitButton = document.getElementById('submit-answers');
+            const heartReveal = document.getElementById('heart-reveal');
+            const overallFeedback = document.getElementById('overall-feedback');
+
+            submitButton.addEventListener('click', () => {
+                let allCorrect = true;
+                overallFeedback.textContent = ''; // Clear previous overall feedback
+
+                for (let i = 6; i <= 8; i++) {
+                    const input = document.getElementById(`answer${i}`);
+                    const feedback = document.getElementById(`feedback${i}`);
+                    const userAnswer = input.value.trim().toLowerCase();
+                    const correctAnswer = answers[`answer${i}`].toLowerCase();
+
+                    if (userAnswer === correctAnswer) {
+                        feedback.textContent = 'Correct!';
+                        feedback.style.color = 'green';
+                        input.style.borderColor = 'green';
+                    } else {
+                        feedback.textContent = 'Incorrect. Try again!';
+                        feedback.style.color = 'red';
+                        input.style.borderColor = 'red';
+                        allCorrect = false;
+                    }
+                }
+
+                if (allCorrect) {
+                    heartReveal.style.display = 'block';
+                    overallFeedback.textContent = 'All riddles solved! The heart is revealed!';
+                    overallFeedback.style.color = 'green';
+                } else {
+                    overallFeedback.textContent = 'Some answers are incorrect. Keep trying!';
+                    overallFeedback.style.color = 'orange';
+                }
+            });
+
+            const secretCodeInput = document.getElementById('secretCodeInput');
+            const checkSecretCodeBtn = document.getElementById('checkSecretCode');
+            const secretCodeFeedback = document.getElementById('secretCodeFeedback');
+
+            checkSecretCodeBtn.addEventListener('click', () => {
+                const enteredCode = secretCodeInput.value.trim().toUpperCase();
+                const correctCode = 'ECG';
+
+                if (enteredCode === correctCode) {
+                    secretCodeFeedback.textContent = 'Correct! You have found the secret code!';
+                    secretCodeFeedback.style.color = 'green';
+                    secretCodeInput.style.borderColor = 'green';
+                    document.getElementById('puzzle3Button').style.display = 'block'; // Show the button
+                } else {
+                    secretCodeFeedback.textContent = 'Incorrect code. Try again.';
+                    secretCodeFeedback.style.color = 'red';
+                    secretCodeInput.style.borderColor = 'red';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
